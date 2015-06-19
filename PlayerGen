@@ -1,0 +1,43 @@
+'General Settings
+TextWindow.Title = "S.E.G.M"
+TextWindow.ForegroundColor = "white"
+
+'Main Frame Program
+TextWindow.WriteLine("Hello and welcome to the S.E.G.M")
+
+'Player Settings
+Players:
+TextWindow.WriteLine("How many players would you like to enter?")
+player = TextWindow.ReadNumber()
+TextWindow.WriteLine("To confirm is that " + player + " players? Y/N")
+repl:
+reply01 = TextWindow.Read()
+If reply01 = "Y" or "y" Then
+ElseIf reply01 = "N" and "n" Then
+  Goto Players
+Else
+  TextWindow.WriteLine("Incorrect character inserted, please use 'N' or 'Y'")
+  Goto repl
+EndIf 
+
+'Sorting out the players
+v = 1
+For i = 1 To player
+  
+  TextWindow.WriteLine("Enter name of Player")
+  PlayerName[v] = TextWindow.Read()
+  TextWindow.WriteLine("Please enter a rating on 1 to 10")
+  PlayerRating[v] = TextWindow.ReadNumber()
+  Clear:
+  v = v + 1
+EndFor
+
+For i = 1 To player
+  TextWindow.WriteLine(PlayerName[i]+ " is rated PR " + PlayerRating[i])  
+EndFor
+
+'Team Sorting
+average= (PlayerRating[i] )/5 '= team average 
+
+'Algorithm
+'If a player is rated 10, they will be paired with a player rated 1
