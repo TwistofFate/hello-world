@@ -37,7 +37,8 @@ For i = 1 To player
 EndFor
 
 'Team Sorting
-average= (PlayerRating[i] )/5 '= team average 
+average= (PlayerRating[1] + PlayerRating[2] + PlayerRating[3] + PlayerRating[4] + PlayerRating[5] + PlayerRating[6] + PlayerRating[7] + PlayerRating[8] + PlayerRating[9] + PlayerRating[10] )/player '= team average 
+TextWindow.WriteLine(average)
 
 'Algorithm
 'If a player is rated 10, they will be paired with a player rated 1
